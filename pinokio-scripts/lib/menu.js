@@ -6,7 +6,10 @@
 // @returns {Array<{default?:boolean, icon:string, text:string, href:string}>}
 function buildMenu(state) {
   if (!state.installed) {
-    return [{ default: true, icon: 'fa-solid fa-download', text: 'Install', href: 'pinokio-scripts/install.js' }];
+    return [
+      { default: false, icon: 'fa-solid fa-download', text: 'Install', href: 'pinokio-scripts/install.js' },
+      { default: false, icon: 'fa-solid fa-download', text: 'Install Main', href: 'pinokio-scripts/install-main.js' }
+    ];
   }
   if (state.running) {
     // The server takes ~1-2 min to reach its `listening on …` line (sidecar
